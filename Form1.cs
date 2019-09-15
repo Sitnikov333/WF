@@ -21,21 +21,15 @@ namespace WindowsFormsApp5
 
         }
 
+        public Int64 first = 0;
+        public Int64 second = 1;
+
         static int Fib(int first, int second)
         {
-           
-            
-            
-                int sum = first + second;
-
-
-
-                first = second;
-            second = sum;
-
-
-           
-            return sum;
+            int sum = first + second;
+            second = first;
+            first = sum;
+            return second;
         }
         public Form1()
         {
@@ -55,11 +49,8 @@ namespace WindowsFormsApp5
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            
-            label1.Text = Fib(1,0).ToString();
-
-
+        {            
+            label1.Text = Fib(first,second).ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
